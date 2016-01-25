@@ -23,6 +23,7 @@ public class TC1 extends TestCase
 	public void runTC1()
 	{
 		System.out.println("test!!!");
+		System.out.println("Hello");
 		testParameters.setCurrentTestDescription("Test for login with valid user credentials");
 		testParameters.setIterationMode(IterationOptions.RunOneIterationOnly);
 		//testParameters.setBrowser(Browser.HtmlUnit);

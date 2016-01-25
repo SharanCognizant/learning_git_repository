@@ -18,29 +18,30 @@ import functionallibraries.FunctionalLibrary;
 public class TC1 extends TestCase
 {
 	private FunctionalLibrary functionalLibrary;
-	
+
 	@Test()
 	public void runTC1()
 	{
+		System.out.println("test!!!");
 		testParameters.setCurrentTestDescription("Test for login with valid user credentials");
 		testParameters.setIterationMode(IterationOptions.RunOneIterationOnly);
 		//testParameters.setBrowser(Browser.HtmlUnit);
-		
+
 		driverScript = new DriverScript(testParameters);
 		driverScript.driveTestExecution();
 	}
-	
+
 	@Override
 	public void setUp()
 	{
 		functionalLibrary = new FunctionalLibrary(scriptHelper);
 		report.addTestLogSection("Setup");
-		
+
 		driver.get(properties.getProperty("ApplicationUrl"));
 		report.updateTestLog("Invoke Application", "Invoke the application under test @ " +
 								properties.getProperty("ApplicationUrl"), Status.DONE);
 	}
-	
+
 	@Override
 	public void executeTest()
 	{
@@ -48,7 +49,7 @@ public class TC1 extends TestCase
 		functionalLibrary.verifyLoginValidUser();
 		functionalLibrary.logout();
 	}
-	
+
 	@Override
 	public void tearDown()
 	{
